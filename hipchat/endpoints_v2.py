@@ -35,6 +35,11 @@ mapping_table = {
         'path': '/room/{{room}}',
         'valid_params': ['expand']
     },
+    'set_room_topic': {
+        'method': 'PUT',
+        'path': '/room/{{room}}/topic',
+        'status': 204
+    },
     'view_history': {
         'path': '/room/{{room}}/history',
         'valid_params': ['date', 'timezone', 'start-index', 'max-results', 'reverse']
@@ -49,7 +54,10 @@ mapping_table = {
     },
     'get_all_users':  {
         'path': '/user',
-        'valid_params': ['start-index', 'max-results', 'include-deleted']
+        'valid_params': ['start-index', 'max-results', 'include-deleted', 'expand']
+    },
+    'update_user': {
+        'path': '/user/{{user}}'
     },
 
 }
