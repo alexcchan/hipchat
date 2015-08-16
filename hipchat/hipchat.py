@@ -44,7 +44,7 @@ def clean_kwargs(kwargs):
 
 class Hipchat(object):
 
-    def __init__(self, token=None, api_version=2):
+    def __init__(self, token=None, api_version=2, client_args={}):
         self.token = token
         if api_version == 1:
             self.mapping_table = mapping_table_v1
@@ -53,7 +53,7 @@ class Hipchat(object):
         else:
             raise ValueError("Unsupported HipChat API Version: %d" %
                     api_version)
-        self.client = httplib2.Http()
+        self.client = httplib2.Http(**client_args)
 
     def __getattr__(self, api_call):
         def call(self, **kwargs):
