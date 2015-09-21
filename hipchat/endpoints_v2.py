@@ -19,7 +19,7 @@ mapping_table = {
     },
     'get_all_rooms': {
         'path': '/room',
-        'valid_params': ['start-index', 'max-results']
+        'valid_params': ['start-index', 'max-results', 'include-private', 'include-archived']
     },
     'send_room_notification_redirect': {
         'method': 'POST',
@@ -39,6 +39,14 @@ mapping_table = {
         'method': 'PUT',
         'path': '/room/{{room}}/topic',
         'status': 204
+    },
+    'get_room_members': {
+        'path': '/room/{{room}}/member',
+        'valid_params': ['start-index', 'max-results', 'expand']
+    },
+    'get_room_participants': {
+        'path': '/room/{{room}}/participant',
+        'valid_params': ['start-index', 'max-results', 'include-offline', 'expand']
     },
     'view_history': {
         'path': '/room/{{room}}/history',
