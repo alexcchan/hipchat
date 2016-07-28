@@ -9,7 +9,6 @@ setup(
 	packages = ['hipchat'],
 	include_package_data = True,
 	install_requires = ['httplib2', 'simplejson'],
-	license='LICENSE.txt',
 	url = 'https://github.com/alexcchan/hipchat/tree/master',
 	keywords = 'hipchat api',
 	description = 'HipChat API v2 Wrapper for Python',
